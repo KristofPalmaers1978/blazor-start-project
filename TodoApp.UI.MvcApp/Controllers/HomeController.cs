@@ -17,7 +17,10 @@ namespace TodoApp.UI.MvcApp.Controllers
         {
             return View();
         }
-
+        public IActionResult TodoItemsView()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

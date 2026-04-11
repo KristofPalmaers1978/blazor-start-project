@@ -1,0 +1,42 @@
+﻿
+@inject TodoAppService TodoService
+<h3>Todo List</h3>
+
+<input @bind="newTitle" placeholder="New todo..." />
+<button @onclick="AddTodo">Add</button>
+
+<ul>
+    @foreach (var item in todos)
+    {
+        <li>
+            <input type="checkbox" checked="@item.IsDone" />
+            @item.Title
+        </li>
+    }
+</ul>
+
+@code {
+    List<TodoItem> todos = new();
+    string newTitle = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Load();
+    }
+
+    async Task Load()
+    {
+        todos = await TodoService.GetTodosAsync();
+    }
+
+    async Task AddTodo()
+    {
+        if (string.IsNullOrWhiteSpace(newTitle)) return;
+
+        await TodoService.AddTodoAsync(newTitle);
+        newTitle = "";
+        await Load();
+    }
+
+
+}
