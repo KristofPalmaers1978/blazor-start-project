@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var connectionString = builder.Configuration.GetConnectionString("PxlConnection");
+var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 builder.Services.AddScoped<TodoAppService>();
