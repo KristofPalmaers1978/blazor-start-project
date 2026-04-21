@@ -14,6 +14,7 @@
         <li>
             <input type="checkbox" checked="@item.IsDone" />
             @item.Title
+            <button @onclick="() => UpdateTodo(item)">Update</button>
         </li>
     }
 </ul>
@@ -21,7 +22,11 @@
 @code {
     List<TodoItem> todos = new();
     string newTitle = "";
-
+    void UpdateTodo(TodoItem? item)
+    {
+        if(item != null)
+            item.Title = item.Title + " (updated)";
+    }
     protected override async Task OnInitializedAsync()
     {
         await Load();
@@ -43,6 +48,7 @@
 
     async Task AddTodo()
     {
+
         if (string.IsNullOrWhiteSpace(newTitle)) return;
 
         await TodoService.AddTodoAsync(newTitle);

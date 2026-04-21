@@ -1,6 +1,12 @@
-﻿
+﻿@page "/todoItems"
+@rendermode InteractiveServer
+@using TodoApp.Application.Services
+@using TodoApp.Domain.Entities
 @inject TodoAppService TodoService
 <h3>Todo List</h3>
+
+
+
 
 <input @bind="newTitle" placeholder="New todo..." />
 <button @onclick="AddTodo">Add</button>
@@ -16,7 +22,7 @@
 </ul>
 
 @code {
-    
+
     List<TodoItem> todos = new();
     string newTitle = "";
 
@@ -29,9 +35,13 @@
     {
         todos = await TodoService.GetTodosAsync();
     }
-
+    async Task Test()
+    {
+        Console.WriteLine("CLICK");
+    }
     async Task AddTodo()
     {
+        Console.WriteLine("AddTodo called");
         if (string.IsNullOrWhiteSpace(newTitle)) return;
 
         await TodoService.AddTodoAsync(newTitle);
