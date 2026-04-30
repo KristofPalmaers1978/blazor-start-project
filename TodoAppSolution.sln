@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Domain", "TodoApp.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.UI.BlazorWebApp", "TodoApp.UI.BlazorWebApp\TodoApp.UI.BlazorWebApp.csproj", "{9272E1B9-5825-47B8-A7BB-B3B0B500151F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.UI.API", "TodoApp.UI.API\TodoApp.UI.API.csproj", "{2AD4EFDA-4EDA-464A-88A0-51CD7FBC9156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9272E1B9-5825-47B8-A7BB-B3B0B500151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9272E1B9-5825-47B8-A7BB-B3B0B500151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9272E1B9-5825-47B8-A7BB-B3B0B500151F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD4EFDA-4EDA-464A-88A0-51CD7FBC9156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD4EFDA-4EDA-464A-88A0-51CD7FBC9156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD4EFDA-4EDA-464A-88A0-51CD7FBC9156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD4EFDA-4EDA-464A-88A0-51CD7FBC9156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
